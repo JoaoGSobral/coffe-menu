@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+  <div class="finalizar-container">
+    <!-- LOGO -->
+    <img src="../../assets/icon/logo.png" class="logo" />
+
+    <!-- TÍTULO -->
+    <ion-toolbar color="transparent" class="toolbar">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/carrinho"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Finalizar pedido</ion-title>
+    </ion-toolbar>
+
+    <!-- MENSAGEM PRINCIPAL -->
+    <div class="mensagem">
+      Agora dirija-se ao caixa para que você possa pagar o seu pedido!
+    </div>
+
+    <!-- IMAGEM DO GATO -->
+    <img src="../../../assets/icon/gatosentado.PNG" class="gato-img" />
+
+    <!-- CAMPO DE COMANDA -->
+    <div class="mensagem">Por favor, nos informe sua comanda:</div>
+
+    <ion-item lines="none" class="comanda-input">
+      <img
+        src="../../../assets/icon/pencil-outline.svg"
+        class="icon-svg"
+        alt="Caneta"
+        slot="start"
+      />
+      <ion-input placeholder="Digite aqui" [(ngModel)]="comanda"></ion-input>
+    </ion-item>
+ @if (+comanda > 10) {
+  <ion-text color="danger">
+    ❌ Não existe essa comanda.
+  </ion-text>
+} @else {
+  <ion-text color="success">
+    ✅ Comanda válida.
+  </ion-text>
+}
+
+    <ion-icon name="home-outline"></ion-icon>
+
+    <!-- BOTÃO -->
+    <ion-button
+      expand="block"
+      class="finalizar-button"
+      (click)="finalizarPedido()"
+    >
+      Finalizar
+    </ion-button>
+  </div>
+</ion-content>

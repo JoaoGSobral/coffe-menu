@@ -1,0 +1,82 @@
+ion-content {
+  --background: url("../../../assets/icon/fundo1.png") no-repeat center center /
+    cover;
+}
+
+.finalizar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  color: #fff;
+}
+
+.logo {
+  width: 150px;
+  margin-top: 5px;
+}
+
+ion-toolbar {
+  --background: transparent;
+  --color: #fff;
+  margin-bottom: 10px;
+}
+
+.mensagem {
+  margin: 0;
+  background: #ffffff;
+  color: #4b2b17;
+  width: 90%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gato-img {
+   pointer-events: none; /* impede o gato de bloquear cliques */
+
+  position: absolute;
+  top: 54%; /* centralizado verticalmente */
+  left: 50%; /* centralizado horizontalmente */
+  transform: translate(-50%, -50%); /* centralização perfeita */
+  width: 400px; /* ajuste conforme o tamanho do seu gato */
+  z-index: 10; /* garante que fique por cima dos outros elementos */
+}
+
+.comanda-input {
+  margin-top: 180px; /* empurra para baixo, para o gato não sobrepor */
+  width: 90%;
+  --background: #4b2b17 !important;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 12px;
+}
+
+ion-item {
+  --background: transparent !important;
+}
+
+.icon-svg {
+  width: 20px;
+  height: 20px;
+  filter: invert(1); /* deixa branco, se for ícone preto */
+  margin-right: 8px;
+}
+
+ion-input {
+  color: #fff !important;
+  font-size: 14px;
+  --placeholder-color: #ccc !important;
+}
+.finalizar-button {
+  width: 50%;
+  --background: #4b2b17 !important;
+  --color: #ffffff !important;
+  padding: 1px 1px;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+}

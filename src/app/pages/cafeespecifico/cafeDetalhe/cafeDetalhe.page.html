@@ -1,0 +1,74 @@
+<ion-header>
+  <button
+    (click)="voltar()"
+    expand="block"
+    fill="clear"
+    shape="round"
+    class="arrow"
+  >
+    <span class="material-symbols-outlined">arrow_back</span>
+  </button>
+</ion-header>
+
+<ion-content *ngIf="drink" class="detalhes-content">
+  <ion-card class="bebida-card">
+    <img
+      [src]="drink.strDrinkThumb"
+      [alt]="drink.strDrink"
+      class="imagem-bebida"
+    />
+
+    <!-- ⭐ Avaliação -->
+    <div class="avaliacao">
+      <ion-icon name="star-outline"></ion-icon>
+      <span>{{ avaliacao.toFixed(1) }}</span>
+    </div>
+
+    <h1 class="titulo">{{ drink.strDrink }}</h1>
+
+    <!-- ☕ Categoria -->
+    <div class="secao">
+      <ion-chip class="yc-chip">
+        <ion-icon name="cafe-outline"></ion-icon>
+        <ion-label>Quente</ion-label>
+      </ion-chip>
+    </div>
+
+    <!-- 🔹 Tamanho -->
+    <div class="opcoes">
+      @for (tamanho of tamanhos; track $index) {
+        <ion-chip
+          class="yc-chip"
+          [ngClass]="{ ativo: tamanhoSelecionado === tamanho }"
+          (click)="selecionarTamanho(tamanho)"
+        >
+          <ion-label>{{ tamanho }}</ion-label>
+        </ion-chip>
+      }
+    </div>
+
+    <!-- ☕ Descrição -->
+    <div class="secao">
+      <h2>Sobre</h2>
+      <p>{{ descricao }}</p>
+    </div>
+
+    <!-- 💰 Botão de preço -->
+
+      <div class="botoes">
+        <button class="botao-preco">
+          Preço: R$ {{ drink.preco }}
+        </button>
+
+        <button
+          class="botao-carrinho"
+          [ngClass]="{ 'botao-carrinho--active': estaNoCarrinho }"
+          (click)="adicionarAoCarrinho()"
+        >
+          <ion-icon name="cart-outline"></ion-icon>
+        </button>
+      </div>
+
+
+  </ion-card>
+</ion-content>
